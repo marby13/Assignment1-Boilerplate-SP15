@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Instagram Feed</title>
+<style>
+
+.img-responsive { width: 100%; }
+#wrapper { display: block; margin-left: auto; margin-right: auto; max-width: 1220px; }
+h1 { background-color: #394e63; color: #fff; text-align: center; padding: 20px; font-size: 48px;}
+div.clear_floats { clear: both; }
+
+div.img-container { position: relative; width: 305px; height: 305px; float: left; }
+div.caption {
+	position:absolute; 
+	z-index: 5; 
+	top: 0; left: 0; 
+	width: 100%; height: 100%; 
+	opacity: 0; 
+	background-color: rgb(89, 82, 79);
+	padding: 15px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+div.caption:hover {opacity: 0.9;}
+div p {color:#fff; font-size: 18px;}
+</style>
+</head>
+
+<body>
+<h1>Hi {{user.username}}, check out what's new in your feed!</h1>
+<div id="wrapper">
+	{{#each photos}}
+		<div class="img-container">
+			<img src="{{url}}" class="img-responsive" class="img hashtag-img">
+			<div class="caption"><p>{{caption.text}}</p></div>
+		</div>
+	{{/each}}
+	<div class="clear_floats">&nbsp;</div>
+</div>
+
+</body>
+
+</html>
