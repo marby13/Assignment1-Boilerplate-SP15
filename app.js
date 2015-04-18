@@ -96,7 +96,7 @@ passport.use(new InstagramStrategy({
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_CLIENT_ID,
     clientSecret: FACEBOOK_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: "http://evolab2.herokuapp.com/auth/facebook/callback",
     scope: 'user_friends,user_status,friends_status,friends_likes,read_stream'
   },
 
